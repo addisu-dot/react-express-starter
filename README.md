@@ -84,15 +84,9 @@ The endpoint returns a JSON response:
 }
 ```
 
-### How Express Handles Requests
+### Understand the backend request flow
 
-```mermaid
-flowchart TD
-    A["HTTP GET Request"] --> B["Express Route"]
-    B --> C["Read Resource Data"]
-    C --> D["Return JSON Response"]
-    D --> E["HTTP 200 OK"]
-```
+![backend request flow](<mermaid-diagram (2).png>)
 
 Express matches the incoming request to the route, reads the resource array, and sends the data as JSON.
 
@@ -112,7 +106,7 @@ The backend runs at:
 curl http://localhost:3000/api/resources
 ```
 
-## 3. Frontend — React and Vite
+## 3. Frontend 
 
 ### Setup
 
@@ -125,24 +119,16 @@ pnpm install
 
 ### Frontend Responsibilities
 
-The React application:
-
 1. Fetches resources from the API.
 2. Displays a loading message while waiting.
 3. Handles request errors.
 4. Stores the response in React state.
 5. Renders each resource.
 
-### Data Fetching Flow
+### Request flow
 
-```mermaid
-flowchart TD
-    A["ResourceList Component"] --> B["useEffect"]
-    B --> C["fetch('/api/resources')"]
-    C --> D["Parse JSON"]
-    D --> E["Update React State"]
-    E --> F["Render Resources"]
-```
+![Frontend request flow](<mermaid-diagram (1).png>)
+
 
 ### Run the Frontend
 
@@ -189,24 +175,7 @@ The API response contains the `data` array, which React stores in state and rend
 
 ### Complete Communication Flow
 
-```mermaid
-sequenceDiagram
-    actor U as User
-    participant R as React
-    participant V as Vite Proxy
-    participant E as Express
-    participant D as Resource Data
-
-    U->>R: Open the application
-    R->>V: GET /api/resources
-    V->>E: Forward request
-    E->>D: Read resources
-    D-->>E: Return resource array
-    E-->>V: JSON response
-    V-->>R: Forward response
-    R->>R: Update state
-    R-->>U: Display resources
-```
+![complete flow](mermaid-diagram.png)
 
 **Note:** The Vite proxy is for local development. Production deployment requires an appropriate frontend and backend API configuration.
 

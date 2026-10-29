@@ -7,12 +7,12 @@ const PORT = 3000;
 const resources = [
     {
         id: 1,
-        title: "Book of Acts",
+        title: "Intoduction to Algorithms",
         type: "Recording",
     },
     {
         id:2,
-        title: "1 John",
+        title: "Sytem Design",
         type: "Recording"
     }
 ];
