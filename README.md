@@ -234,7 +234,7 @@ This template can be extended with:
 - Authentication and authorization
 - Production deployment
 
-## Learning Resources
+## Resources
 
 - [Node.js Documentation](https://nodejs.org/en/learn)
 - [Express Documentation](https://expressjs.com/)
