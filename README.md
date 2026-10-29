@@ -86,7 +86,7 @@ The endpoint returns a JSON response:
 
 ### Understand the backend request flow
 
-![backend request flow](<mermaid-diagram (2).png>)
+![Backend Request Flow](backend_request_flow.png)
 
 Express matches the incoming request to the route, reads the resource array, and sends the data as JSON.
 
@@ -127,7 +127,7 @@ pnpm install
 
 ### Request flow
 
-![Frontend request flow](<mermaid-diagram (1).png>)
+![Frontend request flow](<frontend_request_flow.png>)
 
 
 ### Run the Frontend
@@ -175,7 +175,7 @@ The API response contains the `data` array, which React stores in state and rend
 
 ### Complete Communication Flow
 
-![complete flow](mermaid-diagram.png)
+![complete flow](complete_flow.png)
 
 **Note:** The Vite proxy is for local development. Production deployment requires an appropriate frontend and backend API configuration.
 
